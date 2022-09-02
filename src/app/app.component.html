@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8e959b;">
+    <a class="navbar-brand" href="#">Food App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false">Admin Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-admin" href="#">Add Admin</a>
+                    <a class="dropdown-item" routerLink="admin-details" href="#">Admin Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Branch Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-branch" href="#">Add Branch</a>
+                    <a class="dropdown-item" routerLink="branch-details" href="#">Branch Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Branch Manager Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-branchManager" href="#">Add Branch Manager</a>
+                    <a class="dropdown-item" routerLink="branchManager-details" href="#">Branch Manager Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Staff Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-staff" href="#">Add Staff</a>
+                    <a class="dropdown-item" routerLink="staff-details" href="#">Staff Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Menu Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-menu" href="#">Add Menu</a>
+                    <a class="dropdown-item" routerLink="menu-details" href="#">Menu Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Item Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-item" href="#">Add Item</a>
+                    <a class="dropdown-item" routerLink="item-details" href="#">Item Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-expanded="false">Food Order Services</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="add-foodOrder" href="#">Add Food Order</a>
+                    <a class="dropdown-item" routerLink="foodOrder-details" href="#">Food Order Details</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown active link" *ngIf="isLoggedIn()!='true'">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Login
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="logAdmin()" routerLink="login" href="#">Log in as Admin</a>
+                    <a class="dropdown-item" (click)="logBranchManager()" routerLink="login" href="#">Log in as Branch
+                        Manager</a>
+                    <a class="dropdown-item" (click)="logStaff()" routerLink="login" href="#">Log in as Staff</a>
+                </div>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link link" routerLink="register" href="#">Register <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item active">
+              <a class="nav-link" routerLink="login" href="#">Login</a>
+          </li> -->
+            
+
+
+            <li class="nav-item active link" *ngIf="isLoggedIn()=='true'">
+                <button (click)="logout()" class="btn btn-secondary">Logout</button>
+            </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+</nav>
+<router-outlet></router-outlet>

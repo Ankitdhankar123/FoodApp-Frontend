@@ -1,0 +1,22 @@
+<div class="container"  >
+    <h3 *ngIf="logRole=='admin'">Login As Admin</h3>
+    <h3 *ngIf="logRole=='branchManager'">Login As Branch Manager</h3>
+    <h3 *ngIf="logRole=='staff'">Login As Staff</h3>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="login()" >
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                placeholder="Enter the Email ID">
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Please enter valid email</span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"
+                placeholder="Enter the Password">
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Please enter valid password</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
